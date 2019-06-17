@@ -7,6 +7,6 @@ pool water monitoring solution for my salt water pool
 -display web page showing monitored values in real time
 -allow set point changes via web gui
 -possible api intergrations
--reccomend corrective action based on readings
+-recommend corrective action based on readings
 
 
