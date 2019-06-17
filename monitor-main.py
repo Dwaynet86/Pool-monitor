@@ -22,7 +22,7 @@ GPIO.setwarnings(False)  # Disable Warnings
 
 def create_database():
 
-    conn = cymysql.connect(servername, username, password)
+    conn = mysql.connect(localhost, poolmon, poolmon)
     curs = conn.cursor()
     curs.execute("SET sql_notes = 0; ")  # Hide Warnings
 
