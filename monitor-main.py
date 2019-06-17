@@ -10,7 +10,7 @@
 
 
 #import needed modules
-
+import configuration as cfg
 import RPi.GPIO as GPIO #  Import GPIO Module
 from time import sleep # Import sleep Module for timing
 
