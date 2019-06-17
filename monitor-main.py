@@ -5,7 +5,8 @@
 #Contact: dwaynetruex@yahoo.com
 
 # This program was designed to control multiple relays
-# and read multiple inputs
+# and read multiple inputs for the purpose of 
+# monitoring and controlling swimming pool water parameters
 
 
 
@@ -46,7 +47,7 @@ create_database()
 #create_sensors_table()
 
 
-
+print("hello.. this is the end")
 #Main Loop
 while True: # Loop Continuously
     #relays()
