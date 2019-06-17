@@ -1,5 +1,6 @@
-#configuration file 
+#configuration settings
 
+#Define what sensors are connected, there names, and there type
 # Define MySQL database login settings
 
 servername = "localhost"
