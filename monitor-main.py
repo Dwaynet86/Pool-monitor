@@ -32,3 +32,20 @@ def create_database():
     conn.commit()
     conn.close()
     return
+
+
+# Main Program
+
+# First run create database and tables
+create_database()
+create_relay_table()
+create_settings_table()
+create_sensors_table()
+
+
+
+#Main Loop
+while True: # Loop Continuously
+    #relays()
+    sleep(1)
+    
