@@ -12,6 +12,7 @@
 #import needed modules
 import configuration as cfg
 import RPi.GPIO as GPIO #  Import GPIO Module
+import pymysql
 from time import sleep # Import sleep Module for timing
 
 # Setup GPIO Pins 
@@ -22,7 +23,7 @@ GPIO.setwarnings(False)  # Disable Warnings
 
 def create_database():
 
-    conn = mysql.connect(localhost, poolmon, poolmon)
+    conn = pymysql.connect(cfg.servername, cfg.username, cfg.password, cfg.dbname)
     curs = conn.cursor()
     curs.execute("SET sql_notes = 0; ")  # Hide Warnings
 
@@ -32,6 +33,8 @@ def create_database():
     conn.commit()
     conn.close()
     return
+
+
 
 
 # Main Program
