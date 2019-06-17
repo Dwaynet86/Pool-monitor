@@ -23,13 +23,13 @@ GPIO.setwarnings(False)  # Disable Warnings
 
 
 def create_database():
-
+    print("connecting to server %s using user %s and password %s") % (cfg.servername, cfg.username, cfg.password)
     conn = pymysql.connect(cfg.servername, cfg.username, cfg.password, cfg.dbname)
     curs = conn.cursor()
     curs.execute("SET sql_notes = 0; ")  # Hide Warnings
-
+    
     curs.execute("CREATE DATABASE IF NOT EXISTS {}".format(dbname))
-
+    print("creating db ", cfg.dbname)
     curs.execute("SET sql_notes = 1; ")  # Show Warnings
     conn.commit()
     conn.close()
