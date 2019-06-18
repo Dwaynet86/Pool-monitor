@@ -36,22 +36,18 @@ def close_database_connection(conn, curs):
     conn.close()
 
 def create_database():
-    print("connecting to server...") 
+    #print("connecting to server...") 
     conn = pymysql.connect(servername, username, password)
     
-    print("connection made")
+    #print("connection made!")
     curs = conn.cursor()
     curs.execute("SET sql_notes = 0; ")  # Hide Warnings
     
-    print("creating db %s") % (dbname)
+    #print("creating database %s") % (dbname)
     curs.execute("CREATE DATABASE IF NOT EXISTS {}".format(dbname))
     
-    print("creating database if not created")
+    #print("creating database if not created")
     curs.execute("SET sql_notes = 1; ")  # Show Warnings
-    
-    # Setup tables
-    
-    
     
     conn.commit()
     conn.close()
@@ -70,7 +66,8 @@ create_database()
 print("main loop")
 
 #Main Loop
-#while True: # Loop Continuously
+while True: # Loop Continuously
     #relays()
- #   sleep(1)
+    print("loop")
+    sleep(10)
     
