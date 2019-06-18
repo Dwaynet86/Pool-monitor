@@ -12,7 +12,6 @@
 
 #import needed modules
 import config as cfg
-
 import RPi.GPIO as GPIO #  Import GPIO Module
 import pymysql
 from time import sleep # Import sleep Module for timing
@@ -47,7 +46,8 @@ def close_database_connection(conn, curs):
 #create_sensors_table()
 
 
-print("hello.. this is the end")
+print("main loop")
+
 #Main Loop
 #while True: # Loop Continuously
     #relays()
