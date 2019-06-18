@@ -11,7 +11,7 @@
 
 
 #import needed modules
-import configuration as cfg
+import config as cfg
 import RPi.GPIO as GPIO #  Import GPIO Module
 import pymysql
 from time import sleep # Import sleep Module for timing
@@ -49,7 +49,7 @@ create_database()
 
 print("hello.. this is the end")
 #Main Loop
-while True: # Loop Continuously
+#while True: # Loop Continuously
     #relays()
-    sleep(1)
+ #   sleep(1)
     
