@@ -27,9 +27,9 @@ def create_database():
     conn = pymysql.connect(cfg.servername, cfg.username, cfg.password, cfg.dbname)
     curs = conn.cursor()
     curs.execute("SET sql_notes = 0; ")  # Hide Warnings
-    
-    curs.execute("CREATE DATABASE IF NOT EXISTS {}".format(dbname))
     print("creating db ", cfg.dbname)
+    curs.execute("CREATE DATABASE IF NOT EXISTS {}".format(cfg.dbname))
+    
     curs.execute("SET sql_notes = 1; ")  # Show Warnings
     conn.commit()
     conn.close()
