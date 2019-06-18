@@ -11,7 +11,7 @@
 
 
 #import needed modules
-import config
+from config import *
 import RPi.GPIO as GPIO #  Import GPIO Module
 import pymysql
 from time import sleep # Import sleep Module for timing
