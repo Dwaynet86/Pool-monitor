@@ -24,7 +24,7 @@ GPIO.setwarnings(False)  # Disable Warnings
 
 def create_database():
     print("connecting to server %s using user %s and password %s") % (cfg.servername, cfg.username, cfg.password)
-    conn = pymysql.connect(cfg.servername, cfg.username, cfg.password, cfg.dbname)
+    conn = pymysql.connect(cfg.servername, cfg.username, cfg.password)
     print("connection made")
     curs = conn.cursor()
     print("curs done")
