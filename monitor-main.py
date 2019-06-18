@@ -68,6 +68,8 @@ print("main loop")
 #Main Loop
 while True: # Loop Continuously
     #relays()
+    #pull sensor data then react if needed
+
     print("loop")
     sleep(10)
     
