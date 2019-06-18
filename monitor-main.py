@@ -11,7 +11,7 @@
 
 
 #import needed modules
-import config as cfg
+import config
 import RPi.GPIO as GPIO #  Import GPIO Module
 import pymysql
 from time import sleep # Import sleep Module for timing
@@ -23,7 +23,7 @@ GPIO.setwarnings(False)  # Disable Warnings
 
 def open_database_connection():
 
-    conn = pymysql.connect(cfg.servername, cfg.username, cfg.password, cfg.dbname)
+    conn = pymysql.connect(servername, username, password, dbname)
     curs = conn.cursor()
     curs.execute("SET sql_notes = 0; ")  # Hide Warnings
 
@@ -35,6 +35,27 @@ def close_database_connection(conn, curs):
     conn.commit()
     conn.close()
 
+def create_database():
+    print("connecting to server...") 
+    conn = pymysql.connect(servername, username, password)
+    
+    print("connection made")
+    curs = conn.cursor()
+    curs.execute("SET sql_notes = 0; ")  # Hide Warnings
+    
+    print("creating db ", dbname)
+    curs.execute("CREATE DATABASE IF NOT EXISTS {}".format(dbname))
+    
+    print("creating database if not created")
+    curs.execute("SET sql_notes = 1; ")  # Show Warnings
+    
+    # Setup tables
+    
+    
+    
+    conn.commit()
+    conn.close()
+    return
 
 
 # Main Program
