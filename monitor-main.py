@@ -12,6 +12,7 @@
 
 #import needed modules
 import config as cfg
+
 import RPi.GPIO as GPIO #  Import GPIO Module
 import pymysql
 from time import sleep # Import sleep Module for timing
@@ -40,7 +41,7 @@ def close_database_connection(conn, curs):
 # Main Program
 
 # First run create database and tables
-create_database()
+#create_database()
 #create_relay_table()
 #create_settings_table()
 #create_sensors_table()
