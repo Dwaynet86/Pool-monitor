@@ -21,22 +21,19 @@ from time import sleep # Import sleep Module for timing
 GPIO.setmode(GPIO.BCM)  # Configures how we are describing our pin numbering
 GPIO.setwarnings(False)  # Disable Warnings
 
+def open_database_connection():
 
-def create_database():
-    print("connecting to server %s using user %s and password %s") % (cfg.servername, cfg.username, cfg.password)
-    conn = pymysql.connect(cfg.servername, cfg.username, cfg.password)
-    print("connection made")
+    conn = pymysql.connect(cfg.servername, cfg.username, cfg.password, cfg.dbname)
     curs = conn.cursor()
-    print("curs done")
     curs.execute("SET sql_notes = 0; ")  # Hide Warnings
-    print("creating db ", cfg.dbname)
-    curs.execute("CREATE DATABASE IF NOT EXISTS {}".format(cfg.dbname))
-    
-    curs.execute("SET sql_notes = 1; ")  # Show Warnings
+
+    return conn, curs
+
+def close_database_connection(conn, curs):
+
+    curs.execute("SET sql_notes = 1; ")
     conn.commit()
     conn.close()
-    return
-
 
 
 
