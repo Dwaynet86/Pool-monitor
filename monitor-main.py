@@ -43,7 +43,7 @@ def create_database():
     curs = conn.cursor()
     curs.execute("SET sql_notes = 0; ")  # Hide Warnings
     
-    print("creating db ", dbname)
+    print("creating db %s") % (dbname)
     curs.execute("CREATE DATABASE IF NOT EXISTS {}".format(dbname))
     
     print("creating database if not created")
