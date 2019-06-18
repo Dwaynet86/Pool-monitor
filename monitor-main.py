@@ -61,7 +61,7 @@ def create_database():
 # Main Program
 
 # First run create database and tables
-#create_database()
+create_database()
 #create_relay_table()
 #create_settings_table()
 #create_sensors_table()
