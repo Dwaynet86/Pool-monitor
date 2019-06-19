@@ -36,10 +36,10 @@ def close_database_connection(conn, curs):
     conn.close()
 
 def create_database():
-    #print("connecting to server...") 
+    print("connecting to server...") 
     conn = pymysql.connect(servername, username, password)
-    
-    #print("connection made!")
+    print(servername, username, password)
+    print("connection made!")
     curs = conn.cursor()
     curs.execute("SET sql_notes = 0; ")  # Hide Warnings
     
