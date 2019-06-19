@@ -1,5 +1,5 @@
 # Add sensor information here
-
+from collections import OrderedDict
 
 sensors = OrderedDict([("temperature", {  # DS18B20 Temperature Sensor
                             "sensor_type": "1_wire_temp",
